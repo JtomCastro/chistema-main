@@ -151,7 +151,7 @@ router.post("/usuarios/:id/eliminar", checkAdmin, (req, res) => {
     });
   });
 });
-/////////////////////////////
+
 // routes/usuarios.js o auth.js
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
@@ -1508,11 +1508,10 @@ router.get("/historial-ventas", (req, res) => {
   });
 });
 ``;
+// NO necesitas importar mysql2/promise al inicio si usas req.getConnection
+// Solo usa req.getConnection con callbacks o con .promise()
 
-/////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////--PRODUCTOS--////////////////////////////////////////////////////////////////
-
+//--PRODUCTOS--
 // Mostrar listado de productos
 // Mostrar productos
 router.get("/productos", (req, res) => {
